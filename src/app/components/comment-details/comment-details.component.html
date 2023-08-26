@@ -1,0 +1,22 @@
+<div class="vstack gap-3">
+  <h3>{{comment?.title}}</h3>
+  <hr>
+  <div class="row">
+    <div>
+      <h6>Descripción</h6>
+      <p class="border-bottom">{{comment?.description}}&nbsp;</p>
+    </div>
+    <div class="col-6">
+      <h6>Autor</h6>
+      <p class="border-bottom">{{comment?.author}}&nbsp;</p>
+    </div>
+    <div class="col-6">
+      <h6>Fecha de creación</h6>
+      <p class="border-bottom">{{comment?.createdAt | date : 'dd/MM/yyyy'}}</p>
+    </div>
+  </div>
+  <hr>
+  <div>
+    <button class="btn btn-secondary" routerLink="/">Regresar</button>
+  </div>
+</div>

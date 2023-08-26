@@ -1,0 +1,32 @@
+<div class="vstack gap-3">
+  <h3>Nuevo comentario</h3>
+  <hr>
+  <form class="row g-3" [formGroup]="commentForm" (ngSubmit)="registerComment()" id="commentRegisterForm">
+    <div class="col-6">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="title" placeholder="Título" formControlName="title" autocomplete="off" [ngClass]="{'is-invalid': commentForm.get('title')?.invalid && commentForm.get('title')?.touched}">
+        <label for="title">Título</label>
+        <div class="invalid-feedback">Campo obligatorio</div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="description" placeholder="Descripción" formControlName="description" autocomplete="off" [ngClass]="{'is-invalid': commentForm.get('description')?.invalid && commentForm.get('description')?.touched}">
+        <label for="description">Descripción</label>
+        <div class="invalid-feedback">Campo obligatorio</div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="form-floating">
+        <input type="text" class="form-control" id="author" placeholder="Autor" formControlName="author" autocomplete="off" [ngClass]="{'is-invalid': commentForm.get('author')?.invalid && commentForm.get('author')?.touched}">
+        <label for="author">Autor</label>
+        <div class="invalid-feedback">Campo obligatorio</div>
+      </div>
+    </div>
+  </form>
+  <hr>
+  <div>
+    <button class="btn btn-secondary" routerLink="/">Regresar</button>
+    <button form="commentRegisterForm" type="submit" [disabled]="commentForm.invalid" class=" btn btn-success float-end">Registrar</button>
+  </div>
+</div>
